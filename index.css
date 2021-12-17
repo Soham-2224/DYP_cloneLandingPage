@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    min-height: 150vh;
+}
+.container {
+    position: relative;
+    width: 100%;
+}
+header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 22px 30px 0 30px;
+    background: #800000;
+}
+.header__top {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-bottom: 2px solid #f8f8f8;
+    padding: 20px 0;
+}
+.logo{
+    position: relative;
+    width: 20em;
+    height: 14em;
+    background: red;
+}
+.header__top ul {
+    position: relative;
+    display: flex;
+    gap: 0.5em;
+}
+.header__top ul li {
+    list-style: none;
+    color: #fff;
+}
+.header__top ul li a {
+    position: relative;
+    font-family: consolas, "Courier New", monospace;
+    text-decoration: none;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.nav {
+    width: 100%;
+    margin-top: 1.5em;
+}
+.nav ul {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5em;
+}
+.nav ul .list {
+    position: relative;
+    list-style: none;
+    display: inline-block;
+    font-size: 1.2em;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #fff;
+    padding: 0.5rem 0.8rem 0.7rem 0.8rem;
+    border-top-left-radius: 0.5em;
+    border-top-right-radius: 0.5em;
+    cursor: pointer;
+}
+.nav ul .list:hover::before,
+.nav ul .list.active::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: -15px;
+    width: 15px;
+    height: 15px;
+    border-bottom-right-radius: 50%;
+    box-shadow: 5px 5px 0 #fff;
+    background: #800000;
+}
+.nav ul .list:hover::after,
+.nav ul .list.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: -15px;
+    width: 15px;
+    height: 15px;
+    border-bottom-left-radius: 50%;
+    box-shadow: -5px 5px 0 #fff;
+    background: #800000;
+}
+.nav ul .list:hover,
+.nav ul .list.active{
+    background: #fff;
+    color: #800000;
+}
+.tooltip {
+    position: absolute;
+    top: 100%;
+    width: max-content;
+    padding: 10px 20px;
+    background: #fff;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    transform: translateY(10px);
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+.list:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(50px);
+}
+.tooltip ul {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.tooltip ul li {
+    list-style: none;
+    width: 100%;
+    text-align: start;
+    font-size: 0.9em;
+    font-weight: 400;
+    line-height: 1.3em;
+}
