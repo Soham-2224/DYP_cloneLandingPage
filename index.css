@@ -5,6 +5,7 @@
 }
 body {
     overflow-x: hidden;
+    background: #f8f8f8;
     min-height: 150vh;
 }
 .container {
@@ -27,8 +28,8 @@ header {
     display: flex;
     justify-content: space-around;
     align-items: flex-end;
-    border-bottom: 2px solid #f8f8f8;
     padding: 20px 0;
+    border-bottom: 2px solid #f8f8f8;
 }
 .logo{
     position: relative;
@@ -43,13 +44,13 @@ header {
 }
 .header__top ul li {
     list-style: none;
-    color: #fff;
+    color: #f8f8f8;
 }
-.header__top ul li a {
+.header__top > ul li a {
     position: relative;
     font-family: consolas, "Courier New", monospace;
     text-decoration: none;
-    color: #fff;
+    color: #f8f8f8;
     font-size: 1em;
     font-weight: 500;
     text-transform: uppercase;
@@ -57,56 +58,106 @@ header {
 }
 .nav {
     position: relative;
+    top: 25px;
     width: 100%;
-    margin-top: 1.5em;
 }
 .nav ul {
     position: relative;
     width: 100%;
+    top: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    gap: 1.5em;
+    background: #800000;
+    border-radius: 10px;
 }
-.nav ul .list {
-    position: relative;
+.nav ul li {
+    display: inline-block;
     list-style: none;
-    display: inline-flex;
-    font-size: 1.2em;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: #fff;
-    padding: 0.5rem 0.8rem 0.7rem 0.8rem;
-    border-top-left-radius: 0.5em;
-    border-top-right-radius: 0.5em;
     cursor: pointer;
 }
-.nav ul .list:hover::before,
-.nav ul .list.active::before {
+.nav ul li .nav__element {
+    position: relative;
+    top: 5px;
+    display: block;
+    color: #f8f8f8;
+    font-family: consolas;
+    font-size: 1.1em;
+    font-weight: 400;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 0.5em 0.5em;
+    padding-bottom: 0.7em;
+}
+ .nav ul li.active span,
+.nav ul li:hover span {
+    background: #f8f8f8;
+    color: #800000;
+}
+
+.nav ul li.active span::before,
+.nav ul li:hover span::before {
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     left: -15px;
     width: 15px;
     height: 15px;
-    border-bottom-right-radius: 50%;
-    box-shadow: 5px 5px 0 #fff;
-    background: #800000;
+    border-bottom-right-radius: 10px;
+    box-shadow: 5px 5px 0 #f8f8f8;
+    background: transparent;
+    pointer-events: none;
 }
-.nav ul .list:hover::after,
-.nav ul .list.active::after {
+.nav ul li.active span::after,
+.nav ul li:hover span::after{
     content: "";
     position: absolute;
-    bottom: 0;
+    bottom: 5px;
     right: -15px;
     width: 15px;
     height: 15px;
-    border-bottom-left-radius: 50%;
-    box-shadow: -5px 5px 0 #fff;
-    background: #800000;
+    border-bottom-left-radius: 10px;
+    box-shadow: -5px 5px 0 #f8f8f8;
+    background: transparent;
+    pointer-events: none;
 }
-.nav ul .list:hover,
-.nav ul .list.active{
-    background: #fff;
+.atooltip {
+    position: absolute;
+    top: 0.7em;
+    left: 0;
+    width: 100%;
+    background: black;
+    padding: 1em;
+    margin-top: 1.2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    visibility: hidden;
+    opacity: 0;
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.05);
+    background: linear-gradient(transparent, #fff);
+    transition: 0.5s;
+}
+.list:hover > .atooltip {
+    visibility: visible;
+    opacity: 1;
+    top: 1.7em;
+}
+.atooltip > div {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.2em;
+    padding: 0.5em 1em;
+}
+.atooltip > div a {
+    text-decoration: none;
+    color: #b69090;
+    font-size: 1em;
+    letter-spacing: 0.5px;
+}
+.atooltip > div a:hover {
     color: #800000;
 }
