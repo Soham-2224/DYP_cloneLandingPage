@@ -706,3 +706,83 @@ footer{
     padding-bottom: 1em;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+@media (max-width: 992px) {
+    .logo {
+        width: 17em;
+        height: 6em;
+    }
+    .nav ul li .nav__element {
+        font-size: 1em;
+        padding: 0.5em 0.3em;
+    }
+    .nav ul li:last-child {
+        display: none;
+    }
+    .atooltip {
+        top: 1.7em;
+        padding: 0.5em;
+        margin-top: 0.6em;
+        gap: 0.5em;
+    }
+    .atooltip > div {
+        line-height: 2em;
+        padding: 0.2em 0.5em;
+    }
+    .atooltip > div a {
+        font-size: 0.9em;
+        letter-spacing: 0.3px;
+    }
+    .atooltip .imgBx {
+        width: 17em;
+        aspect-ratio: 1.2;
+        padding: 0;
+    }
+    .main {
+        padding-top: 2em;
+    }
+    section {
+        padding: 0 20px;
+    }
+    #slider {
+        width: 90vw;
+        height: 80vh;
+    }
+    #slider ul li img {
+        width: 90vw;
+        height: 80vh;
+    }
+    .notice .container {
+        justify-content: center;
+        gap: 2em;
+    }
+    .filter {
+        margin-top: 2em;
+    }
+    .college__sec ul li {
+        width: 9.5rem;
+        font-size: 0.8em;
+    }
+    .college__sec > div {
+        padding: 3em 2em 3em 2em;
+        grid-template-columns: repeat(3, 17em);
+    }
+    .contact .imgBx .image {
+        width: 90%;
+        height: 80%;
+    }
+    footer {
+        padding: 50px 50px;
+    }
+    .footer__container {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-gap: 50px;
+    }
+    .sec ul li {
+        line-height: 1.8em;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 767px) {
+
+}
