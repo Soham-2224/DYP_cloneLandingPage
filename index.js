@@ -93,3 +93,12 @@ galleryLists.forEach((list) => {
 
     })
 })
+
+// nav bar toggle
+const toggler = document.querySelector('.nav__toggle');
+const nav = document.querySelector('.nav');
+    
+toggler.onclick = function(){
+    toggler.classList.toggle('active');
+    nav.classList.toggle('active');
+}

@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -moz-tap-highlight-color: rgba(0,0,0,0);
 }
 .imgBx {
     position: relative;
@@ -92,6 +94,9 @@ header {
     top: 25px;
     width: 100%;
     z-index: 100;
+}
+.nav__toggle {
+    display: none;
 }
 .nav ul {
     position: relative;
@@ -784,5 +789,401 @@ footer{
 }
 
 @media (max-width: 767px) {
-
+    header {
+        padding: 22px 10px 0 10px;
+    }
+    .header__top {
+        justify-content: center;
+        align-items: center;
+        gap: 2.3em;
+        border-bottom: none;
+    }
+    .header__top ul {
+        margin-top: 25px;
+    }
+    .header__top > ul li a {
+        font-size: 0.9em;
+    }
+    .nav {
+        position: fixed;
+        top: 0px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        backdrop-filter: blur(50px);
+        transition: .5s ease-in-out;
+        z-index: 100;
+    }
+    .nav.active {
+        left: 0;
+    }
+    .nav__toggle {
+        position: relative;
+        top: 0px;
+        transform: translateX(300px);
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        background: white;
+        outline: 5px solid #800000;
+        font-size: 1.9em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 100000;
+    }
+    .nav__toggle.active {
+        position: fixed;
+        top: 22px;
+        transition: position 0.8s;
+        transition-delay: 0.5s;
+    }
+    .nav ul li:hover span,
+    .nav ul li.active span {
+        background: #800000;
+        color: #fff;
+    }
+    .nav ul {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: transparent;
+        gap: 1em;
+    }
+    .nav ul li.active span::before, .nav ul li:hover span::before {
+        display: none;
+    }
+    .nav ul li.active span::after, .nav ul li:hover span::after {
+        display: none;
+    }
+    .nav ul li .nav__element {
+        position: relative;
+        top: 0;
+        display: block;
+        color: #800000;
+        font-family: consolas;
+        font-size: 1.1em;
+        font-weight: 400;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
+    .nav ul li:last-child {
+        display: block;
+    }
+    .atooltip {
+        display: none;
+    }
+    .banner {
+        padding: 0 12px;
+        align-items: flex-start;
+        height: max-content;
+        min-height: 25em;
+    }
+    section {
+        padding: 0 20px;
+    }
+    #slider {
+        width: 85vw;
+        height: 40vh;
+    }
+    #slider ul li img {
+        width: 85vw;
+        height: 40vh;
+    }
+    .notice .container .colCard {
+        width: 100%;
+        min-width: 300px;
+        height: 450px;
+        padding: 1.3em 1.3em;
+        flex-direction: column;
+        outline: 0px solid transparent;
+        background: #fff;
+        box-shadow: 0 20px 25px rgb(0 0 0 / 10%);
+    }
+    .notice .container .colCard .vdBx {
+        top: 0em;
+        width: 540px;
+        height: 230px;
+        margin-block: 0.5em;
+    }
+    h2 {
+        margin-top: 0.7em;
+        margin-bottom: 0.4em;
+    }
+    p {
+        padding-bottom: 1em;
+    }
+    .colCard__row {
+        gap: 20px;
+    }
+    .colCard__row:last-of-type {
+        display: none;
+    }
+    .colCard ul li:last-of-type {
+        display: none;
+    }
+    .colCard ul li {
+        height: 119px;
+    }
+    .toggle {
+        width: 20em;
+        justify-content: center;
+        gap: 1.2em;
+        flex-direction: column;
+    }
+    .toggle::before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+    }
+    .toggle.academics::before {
+        transform: translateY(100%);
+    }
+    .college__sec ul {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .college__sec ul li {
+        width: 100%;
+    }
+    .college__sec > div {
+        grid-template-columns: repeat(2, 17em);
+        justify-content: center;
+    }
+    .academic__sec .imgBx {
+        width: 20em;
+    }
+    .contact h2 {
+        text-align: center;
+        margin-block: 0.3em;
+    }
+    .contact p {
+        font-size: 0.9em;
+        padding-block: 1em;
+        text-align: center;
+    }
+    .contact .imgBx .image {
+        width: 95%;
+        height: 65%;
+    }
+    footer {
+        padding: 50px 20px;
+    }
+    .footer__container {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+    .footer__container > div {
+        border-top: 2px solid #999;
+        padding-top: 20px;
+    }
+    .copyright p {
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        text-align: justify;
+    }
+    
+}
+@media (max-width: 685px) {
+    header {
+        padding: 22px 10px 0 10px;
+    }
+    .header__top {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        border-bottom: none;
+    }
+    .header__top ul {
+        margin-top: 25px;
+    }
+    .header__top > ul li a {
+        font-size: 0.9em;
+    }
+    .nav {
+        position: fixed;
+        top: 0px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: #fff;
+        backdrop-filter: blur(50px);
+        transition: .5s ease-in-out;
+        z-index: 100;
+    }
+    .nav.active {
+        left: 0;
+    }
+    .nav__toggle {
+        position: relative;
+        top: 0px;
+        transform: translateX(145px);
+        border-radius: 5px;
+        width: 50px;
+        height: 50px;
+        background: white;
+        outline: 5px solid #800000;
+        font-size: 1.9em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 100000;
+    }
+    .nav__toggle.active {
+        position: fixed;
+        top: 22px;
+        transition: position 0.8s;
+        transition-delay: 0.5s;
+    }
+    .nav ul li:hover span,
+    .nav ul li.active span {
+        background: #800000;
+        color: #fff;
+    }
+    .nav ul {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: transparent;
+        gap: 1em;
+    }
+    .nav ul li.active span::before, .nav ul li:hover span::before {
+        display: none;
+    }
+    .nav ul li.active span::after, .nav ul li:hover span::after {
+        display: none;
+    }
+    .nav ul li .nav__element {
+        position: relative;
+        top: 0;
+        display: block;
+        color: #800000;
+        font-family: consolas;
+        font-size: 1.1em;
+        font-weight: 400;
+        border-radius: 5px;
+        padding: 10px 20px;
+    }
+    .nav ul li:last-child {
+        display: block;
+    }
+    .atooltip {
+        display: none;
+    }
+    .banner {
+        padding: 0 12px;
+        align-items: flex-start;
+        height: max-content;
+        min-height: 25em;
+    }
+    section {
+        padding: 0 20px;
+    }
+    #slider {
+        width: 85vw;
+        height: 40vh;
+    }
+    #slider ul li img {
+        width: 85vw;
+        height: 40vh;
+    }
+    .notice .container .colCard {
+        width: 350px;
+        min-width: 300px;
+        height: 450px;
+        padding: 0 1.3em;
+        flex-direction: column;
+        outline: 0px solid transparent;
+        background: #fff;
+        box-shadow: 0 20px 25px rgb(0 0 0 / 10%);
+    }
+    .notice .container .colCard .vdBx {
+        top: 1em;
+        width: 260px;
+        height: 230px;
+        margin-block: 0.5em;
+    }
+    h2 {
+        margin-top: 0.7em;
+        margin-bottom: 0.4em;
+    }
+    p {
+        padding-bottom: 1em;
+    }
+    .colCard__row:last-of-type {
+        display: none;
+    }
+    .colCard ul li:last-of-type {
+        display: none;
+    }
+    .colCard ul li {
+        height: 119px;
+    }
+    .toggle {
+        width: 20em;
+        justify-content: center;
+        gap: 1.2em;
+        flex-direction: column;
+    }
+    .toggle::before {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+    }
+    .toggle.academics::before {
+        transform: translateY(100%);
+    }
+    .college__sec ul {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .college__sec ul li {
+        width: 100%;
+    }
+    .college__sec > div {
+        grid-template-columns: repeat(1, 17em);
+        justify-content: center;
+    }
+    .academic__sec .imgBx {
+        width: 20em;
+    }
+    .contact h2 {
+        text-align: center;
+        margin-block: 0.3em;
+    }
+    .contact p {
+        font-size: 0.9em;
+        padding-block: 1em;
+        text-align: center;
+    }
+    .contact .imgBx .image {
+        width: 95%;
+        height: 35%;
+    }
+    footer {
+        padding: 50px 20px;
+    }
+    .footer__container {
+        grid-template-columns: 1fr;
+        grid-gap: 30px;
+    }
+    .footer__container > div {
+        border-top: 2px solid #999;
+        padding-top: 20px;
+    }
+    .copyright p {
+        font-size: 0.8em;
+        letter-spacing: 1px;
+        text-align: justify;
+    }
+    
 }
